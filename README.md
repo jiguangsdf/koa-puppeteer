@@ -1,6 +1,40 @@
 # koa-puppeteer
 > 使用 Koajs,Docker,Puppeteer 设计的REST API服务，支持自定义截图，自定义PDF保存，JS渲染(用于爬虫或者代理),除了`render`路由，其他所有路由操作都是异步，加速业务运行
 
+
+**部署/使用**
+
+git clone
+
+`git clone https://github.com/jiguang7/koa-puppeteer.git`
+
+pull docker images
+
+`docker pull alekzonder/puppeteer`
+
+run images
+务必在当起目录下，也就是git clone的地方
+
+`docker run -d --name puppeteer -p 127.0.0.1:3200:3200 -v $PWD/koa-puppeteer/:/app/  alekzonder/puppeteer`
+
+访问
+
+http://127.0.0.1:3200
+
+可用路由
+
+- http://127.0.0.1:3200/screenshot
+- http://127.0.0.1:3200/screenshot/full
+- http://127.0.0.1:3200/pdf
+- http://127.0.0.1:3200/render
+
+实时日志
+
+docker logs -f 容器名
+
+
+
+
 **API**
 
 > 所有接口以REST API的形式提供，方便分布式部署和维护
